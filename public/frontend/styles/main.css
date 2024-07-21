@@ -1,0 +1,145 @@
+body {
+  background-color: #FFF;
+  font-family: "Assistant", sans-serif;
+  color: #071C4D;
+}
+
+.navbar-brand img {
+  max-height: 80px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #071C4D;
+}
+.navbar-light .navbar-nav .nav-link.active {
+  font-weight: bold;
+  color: #071C4D !important;
+}
+
+.btn-navbar-right {
+  margin-top: -20px !important;
+  margin-bottom: -8px !important;
+  margin-right: -12px !important;
+  height: 100px;
+  border-radius: 0;
+}
+
+.btn-login {
+  background-color: #071C4D;
+  color: #FFF;
+}
+.btn-login:hover {
+  background-color: #1E3771;
+  color: #FFF;
+}
+
+header {
+  padding: 180px 0px 165px;
+  margin-top: -110px;
+  background-image: url("../images/apartments.jpg");
+  background-size: cover;
+}
+header h1, header p {
+  color: #FFF;
+}
+header h1 {
+  font-family: "Playfair Display", serif;
+  font-weight: bold;
+  font-size: 50px;
+}
+header p {
+  font-size: 22px;
+}
+header .btn-get-started {
+  background-color: #FF9E53;
+  color: #FFF;
+}
+header .btn-get-started:hover {
+  background-color: #FFAA69;
+  color: #FFF;
+}
+
+.section-stats {
+  margin-top: -50px;
+}
+.section-stats .stats-detail {
+  padding-top: 15px;
+  background-color: #FFF;
+  padding-left: 40px;
+}
+.section-stats h2 {
+  font-size: 30px;
+  margin-bottom: 0;
+}
+.section-stats p {
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+.section-popular {
+  min-height: 540;
+  background-color: #051334;
+  margin-top: -50px;
+  height: 400px;
+}
+.section-popular .section-popular-heading {
+  margin-top: 150px;
+}
+.section-popular .section-popular-heading h2, .section-popular .section-popular-heading p {
+  color: #FFF;
+}
+.section-popular .section-popular-heading h2 {
+  font-family: "Playfair Display", serif;
+  font-weight: bold;
+  font-size: 40px;
+}
+.section-popular .section-popular-heading p {
+  font-size: 18px;
+}
+
+.section-popular-content .section-popular-apartment {
+  margin-top: -100px;
+}
+.section-popular-content .section-popular-apartment .card-apartment {
+  min-height: 380px;
+  background-color: #ddd;
+  color: #FFF;
+  padding: 30px;
+  background-size: cover;
+  margin-bottom: 20px;
+}
+.section-popular-content .section-popular-apartment .apartment-country {
+  font-size: 18px;
+  color: #FFF;
+}
+.section-popular-content .section-popular-apartment .apartment-location {
+  font-size: 26px;
+  color: #FFF;
+}
+.section-popular-content .section-popular-apartment .apartment-button .btn-apartment-details {
+  background-color: #FF9E53;
+  color: #FFF;
+}
+.section-popular-content .section-popular-apartment .apartment-button .btn-apartment-details:hover {
+  background-color: #FFAA69;
+  color: #FFF;
+}
+
+.section-facility-heading {
+  padding-top: 50px;
+  min-height: 506px;
+}
+.section-facility-heading h2 {
+  font-family: "Playfair Display", serif;
+  font-weight: bold;
+  font-size: 40ox;
+}
+
+.section-facility-content {
+  margin-top: -350px;
+}
+
+.section-footer a {
+  color: #071C4D;
+  text-decoration: none;
+}/*# sourceMappingURL=main.css.map */
