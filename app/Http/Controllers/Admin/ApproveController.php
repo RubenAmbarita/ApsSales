@@ -23,7 +23,7 @@ class ApproveController extends Controller
                 ->addIndexColumn()
                 ->addColumn('action', function($item){
                     return '
-                        <a href="'. route('approve.edit', $item->id) . '" class="btn btn-info">
+                        <a href="'. route('admin.approve.edit', $item->id) . '" class="btn btn-info">
                                                         <i class="fa fa-pencil-alt"></i>
                                                     </a>
                     ';
@@ -60,6 +60,6 @@ class ApproveController extends Controller
 
         $item = StockApartment::findOrFail($id);
         $item->update($data);
-        return redirect()->route('approve.index');
+        return redirect()->route('admin.approve.index');
     }
 }

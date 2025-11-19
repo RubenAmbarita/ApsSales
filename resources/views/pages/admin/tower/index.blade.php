@@ -23,7 +23,7 @@
                                             <th>ID</th>
                                             <th>Nama Tower</th>
                                             <th>Stok Kamar</th>
-                                            <th>Action</th>
+                                            <th class="dt-actions text-center">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>

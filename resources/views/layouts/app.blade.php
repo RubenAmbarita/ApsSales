@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sirait Apartment</title>
+    <title>SIMANTAP - Data Monitoring</title>
+    <link rel="icon" type="image/png" href="{{ asset('frontend/images/simantap.png') }}">
     <link rel="stylesheet" href="{{url('frontend/libraries/bootstrap/css/bootstrap.css')}}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,10 +17,10 @@
 
     <!-- navbar -->
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
             <div class="container-fluid" style="height: 70px !important;">
                 <a href="{{ url('/') }}" class="navbar-brand">
-                    <img src="frontend/images/logo.png" alt="logo-apartment">
+                    <img src="frontend/images/SIMANTAP.png" alt="logo-apartment" style="height: 200px !important;">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
                 data-bs-target="#navbarNavAltMarkup" 
@@ -36,10 +37,10 @@
                             <a href="{{ url('/') }}" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item mx-md-2">
-                            <a href="#popular" class="nav-link">Produk</a>
+                            <a href="#fitur" class="nav-link">Fitur</a>
                         </li>
                         <li class="nav-item mx-md-2">
-                            <a href="#popularcontent" class="nav-link">Fasilitas</a>
+                            <a href="#keamanan" class="nav-link">Keamanan</a>
                         </li>
                     </ul>
 
@@ -80,7 +81,7 @@
     
     @yield('content')
 
-    <footer class="section-footer mt-5 mb-4 border-top">
+    <footer class="section-footer mt-5 mb-2 border-top">
         <div class="container pt-5 pb-5">
             <div class="row justify-content-center">
                 <div class="col 12">
@@ -88,9 +89,9 @@
                         <div class="col-12 col-lg-3">
                             <h5>FITUR</h5>
                             <ul class="list-unstyled">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Produk</a></li>
-                                <li><a href="#">Fasilitas</a></li>
+                                <li class="mb-2"><a href="{{ url('/') }}">Home</a></li>
+                                <li class="mb-2"><a href="#fitur">Fitur</a></li>
+                                <li><a href="#keamanan">Keamanan</a></li>
                             </ul>
                         </div>
                         <div class="col-12 col-lg-3">
@@ -100,12 +101,13 @@
                             
                         </div>
                         <div class="col-12 col-lg-3">
-                            <h5>SIRAIT APARTMENT</h5>
+                            <h5 class="mb-3">SIMANTAP - Direktorat TI DJKI</h5>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3183201745787!2d106.82679407812074!3d-6.221690444838418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f34d0d2e18bf%3A0x4b74be698b5db4ad!2sDirektorat%20Jenderal%20Kekayaan%20Intelektual!5e0!3m2!1sid!2sid!4v1758071827412!5m2!1sid!2sid" 
+                                width="300" height="100" style="border:0;" allowfullscreen="" loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
                             <ul class="list-unstyled">
-                                <li><a href="#">Jakarta Selatan</a></li>
-                                <li><a href="#">Indonesia</a></li>
-                                <li><a href="#">06124562323</a></li>
-                                <li><a href="#">siraitapartment@gmail.com</a></li>
+                                <li><p>Jl. H. R. Rasuna Said No.kav 8 9, RT.16/RW.4, Kuningan, East Kuningan, Jakarta, South Jakarta City, Jakarta 12940</p></li>
                             </ul>
                         </div>
                     </div>
@@ -113,9 +115,9 @@
             </div>
         </div>
         <div class="container-fluid">
-            <div class="row border-top justify-content-center align-items-center pt-4">
+            <div class="row border-top justify-content-center align-items-center pt-2 pb-2">
                 <div class="col-auto text-gray-500 font-weight-light">
-                    2024 copyright SiraitApartment . All right reserved . Made in Jakarta
+                    &copy; 2025 SIMANTAP . Semua Data Dilindungi . Made by Direktorat TI - Kekayaan Intelektual
                 </div>
             </div>
         </div>
@@ -123,6 +125,7 @@
     <script src="{{url('frontend/libraries/jquery/jquery-3.7.1.min.js')}}"></script>
     <script src="{{url('frontend/libraries/bootstrap/js/bootstrap.js')}}"></script>
     <script src="{{url('frontend/libraries/retina/retina.min.js')}}"></script>
+    <script src="{{url('frontend/scripts/lazy-bg.js')}}"></script>
     
 </body>
 </html>

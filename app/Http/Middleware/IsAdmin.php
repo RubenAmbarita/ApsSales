@@ -16,10 +16,11 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::user()){
+        $user = Auth::user();
+        if($user && in_array($user->roles, ['ADMIN','KATIMJA','STAFF'])){
             return $next($request);
         }
-        
-        return redirect('/admin');
+
+        return redirect('/login');
     }
 }

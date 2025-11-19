@@ -23,7 +23,7 @@ class ProsesController extends Controller
                 ->addIndexColumn()
                 ->addColumn('action', function($item){
                     return '
-                        <a href="'. route('proses.edit', $item->id) . '" class="btn btn-info">
+                        <a href="'. route('admin.proses.edit', $item->id) . '" class="btn btn-info">
                                                         <i class="fa fa-pencil-alt"></i>
                                                     </a>
                     ';
@@ -61,7 +61,7 @@ class ProsesController extends Controller
 
         $item = StockApartment::findOrFail($id);
         $item->update($data);
-        return redirect()->route('proses.index');
+        return redirect()->route('admin.proses.index');
     }
 
 }

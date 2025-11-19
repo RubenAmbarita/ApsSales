@@ -4,41 +4,121 @@ body {
   color: #071C4D;
 }
 
+/* Reserve space for fixed navbar so content is not covered */
+body { padding-top: 80px; }
+
+/* Offset anchors so target sections are not hidden behind sticky navbar */
+html { scroll-padding-top: 80px; }
+#fitur, #keamanan, #stats { scroll-margin-top: 80px; }
+
+/* Ensure navbar stays above content when sticky */
+.navbar.sticky-top {
+  z-index: 1040;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+/* Ensure fixed navbar overlays content and stays above */
+.navbar.fixed-top {
+  z-index: 1040;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
 .navbar-brand img {
   max-height: 80px;
 }
 
-.navbar-light .navbar-nav .nav-link {
-  color: #071C4D;
+/* Navbar — Deep-navy premium gradient dengan aksen emas */
+.navbar-light {
+  background: linear-gradient(180deg, #0B0E18 0%, #081940 100%);
+  border-bottom: 1px solid rgba(253, 206, 15, 0.18); /* aksen emas tipis */
+  box-shadow: none;
 }
+
+.navbar-light .navbar-nav .nav-link {
+  color: #DCE6F5; /* tinggi keterbacaan di dark */
+  font-weight: 600;
+  letter-spacing: .2px;
+  padding: 0.5rem 0.75rem;
+  position: relative;
+  transition: color .2s ease;
+}
+.navbar-light .navbar-nav .nav-link:hover { color: #FFFFFF; }
+.navbar-light .navbar-nav .nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #fdce0f;
+  border-radius: 2px;
+  margin-top: 6px;
+  transition: width .2s ease;
+}
+.navbar-light .navbar-nav .nav-link:hover::after { width: 24px; }
 .navbar-light .navbar-nav .nav-link.active {
-  font-weight: bold;
-  color: #071C4D !important;
+  color: #fdce0f !important; /* emas untuk aktif */
+}
+.navbar-light .navbar-nav .nav-link.active::after { width: 28px; }
+
+/* Navbar CTA — outline emas (background transparan) */
+.btn-login {
+  background: transparent;
+  border: 2px solid #fdce0f;
+  color: #fdce0f;
+  font-weight: 700;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(253,206,15,0.25);
+}
+.btn-login:hover {
+  background-color: #fdce0f;
+  color: #081940;
+  box-shadow: 0 8px 22px rgba(253,206,15,0.35);
+}
+
+/* Toggler refinement for mobile */
+.navbar-light .navbar-toggler {
+  border-color: rgba(253,206,15,0.35); /* gold accent on toggler */
+}
+.navbar-light .navbar-collapse {
+  /* Background collapse dark gradient semi-transparan */
+  background: linear-gradient(180deg, rgba(11,14,24,0.90) 0%, rgba(8,25,64,0.90) 100%);
+  border-radius: 8px;
+  padding: 8px 10px;
 }
 
 .btn-navbar-right {
-  margin-top: -20px !important;
-  margin-bottom: -8px !important;
-  margin-right: -12px !important;
-  height: 100px;
-  border-radius: 0;
+  /* Rapikan tombol login agar tidak mengganggu tinggi navbar */
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-right: 0 !important; /* hilangkan offset negatif */
+  height: auto;
 }
 
+/* Dorong tombol login ke kanan pada desktop */
+@media (min-width: 768px) {
+  .navbar .form-inline.d-none.d-md-block {
+    margin-left: auto; /* mepet ke kanan dengan memanfaatkan flex */
+  }
+}
+
+/* Pastikan definisi berikut konsisten dengan outline emas */
 .btn-login {
-  background-color: #071C4D;
-  color: #FFF;
+  background: transparent;
+  border: 2px solid #fdce0f;
+  color: #fdce0f;
 }
 .btn-login:hover {
-  background-color: #1E3771;
-  color: #FFF;
+  background-color: #fdce0f;
+  color: #081940;
 }
 
 header {
-  padding: 180px 0px 165px;
-  margin-top: -110px;
-  background-image: url("../images/apartments.jpg");
+  padding: 180px 0px 250px;
+  margin-top: 0px;
+  background-image: linear-gradient( rgba(0, 0, 0, 0.826), rgba(255, 255, 255, 0.1)),url("../images/background.jpg");
   background-size: cover;
+
 }
+
 header h1, header p {
   color: #FFF;
 }
@@ -51,35 +131,97 @@ header p {
   font-size: 22px;
 }
 header .btn-get-started {
-  background-color: #FF9E53;
+  background-color: #fdce0f;
   color: #FFF;
 }
 header .btn-get-started:hover {
-  background-color: #FFAA69;
+  background-color: #c49d00;
   color: #FFF;
 }
 
 .section-stats {
   margin-top: -50px;
+  background: transparent; /* sesuai request: transparan */
+  border-radius: 0;
+  padding: 12px 0; /* tetap ada ruang vertikal ringan */
+  box-shadow: none;
+}
+.section-stats .row.justify-content-center {
+  /* Corporate neutral background (non-blue) for the stats row wrapper */
+  background: linear-gradient(180deg, #0B0E18 0%, #0F121A 100%);
+  border-radius: 16px;
+  padding: 12px 10px;
+  box-shadow: 0 8px 22px rgba(12, 16, 24, 0.25);
 }
 .section-stats .stats-detail {
-  padding-top: 15px;
-  background-color: #FFF;
-  padding-left: 40px;
+  background: linear-gradient(180deg, #0a1f4f 0%, #081940 100%);
+  border-top: 4px solid #fdce0f; /* brand accent */
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(8, 25, 64, 0.35);
+  padding: 18px 14px;
+  margin: 6px 10px; /* jarak antar card */
+  text-align: center;
+  color: #DCE6F5;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.section-stats .stats-detail:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(8, 25, 64, 0.45);
 }
 .section-stats h2 {
-  font-size: 30px;
-  margin-bottom: 0;
+  font-size: 40px;
+  margin-bottom: 6px;
+  font-weight: 800;
+  color: #fdce0f;
+  letter-spacing: .5px;
 }
 .section-stats p {
-  font-size: 20px;
-  font-weight: lighter;
+  font-size: 14px;
+  font-weight: 300;
+  color: #DCE6F5;
+  letter-spacing: .3px;
+}
+
+/* fine-grained typography for stats */
+.section-stats .stat-number {
+  font-size: 1em; /* relative to h2 */
+}
+.section-stats .stat-prefix {
+  font-size: .7em;
+  position: relative;
+  top: -6px;
+  margin-right: 2px;
+}
+.section-stats .stat-suffix {
+  font-size: .6em;
+  position: relative;
+  top: -6px;
+  margin-left: 2px;
+}
+
+/* spacing adjustments on small screens */
+@media (max-width: 576px) {
+  .section-stats .stats-detail {
+    margin-bottom: 12px;
+    padding: 16px 12px;
+  }
+  .section-stats .row.justify-content-center {
+    border-radius: 12px;
+    padding: 10px 8px;
+    box-shadow: 0 6px 18px rgba(12, 16, 24, 0.22);
+  }
+  .section-stats h2 {
+    font-size: 34px;
+  }
+  .section-stats p {
+    font-size: 13px;
+  }
 }
 
 .section-popular {
   min-height: 540;
-  background-color: #051334;
-  margin-top: -50px;
+  background-color: #081940;
+  margin-top: -120px;
   height: 400px;
 }
 .section-popular .section-popular-heading {
@@ -101,29 +243,139 @@ header .btn-get-started:hover {
   margin-top: -100px;
 }
 .section-popular-content .section-popular-apartment .card-apartment {
-  min-height: 380px;
-  background-color: #ddd;
+  min-height: 350px;
+  background-color: transparent; /* gunakan langsung background image tanpa panel biru/abu */
   color: #FFF;
   padding: 30px;
   background-size: cover;
   margin-bottom: 20px;
+  /* Beautify only the four feature cards */
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  background-position: center;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.20);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.section-popular-content .section-popular-apartment .card-apartment.lazy-bg{
+  /* Performance optimization: render only when near viewport */
+  content-visibility: auto;
+  contain-intrinsic-size: 350px 1px; /* Reserve space to avoid layout shift */
+}
+.section-popular-content .section-popular-apartment .card-apartment::after{
+  display: none; /* hilangkan overlay biru agar background image terlihat penuh */
+}
+.section-popular-content .section-popular-apartment .card-apartment:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(0,0,0,0.24);
+}
+.section-popular-content .section-popular-apartment .card-apartment > *{
+  position: relative; z-index: 1;
 }
 .section-popular-content .section-popular-apartment .apartment-country {
-  font-size: 18px;
-  color: #FFF;
-}
-.section-popular-content .section-popular-apartment .apartment-location {
   font-size: 26px;
   color: #FFF;
+  font-weight: 800; /* sedikit ditegaskan */
+  margin-top: 20px;
+  letter-spacing: .5px;
+}
+.section-popular-content .section-popular-apartment .apartment-country::after{
+  content: "";
+  display: block;
+  width: 42px;
+  height: 3px;
+  background: #fdce0f;
+  border-radius: 2px;
+  margin-top: 8px;
+}
+.section-popular-content .section-popular-apartment .apartment-location {
+  font-size: 18px;
+  color: #FFF;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.section-popular-content .section-popular-apartment .apartment-location::before{
+  content: "";
+  display: inline-block;
+  width: 8px; height: 8px;
+  background: #fdce0f;
+  border-radius: 50%;
+  margin-right: 8px;
+  position: relative; top: -1px;
 }
 .section-popular-content .section-popular-apartment .apartment-button .btn-apartment-details {
-  background-color: #FF9E53;
+  background-color: #fdce0f;
   color: #FFF;
+  border-radius: 10px;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(253,206,15,0.35);
 }
 .section-popular-content .section-popular-apartment .apartment-button .btn-apartment-details:hover {
-  background-color: #FFAA69;
+  background-color: #c49d00;
   color: #FFF;
 }
+
+/* keamanan */
+.section-popular-content .section-keamanan {
+  margin-top: -350px !important;
+}
+.section-popular-content .section-keamanan .card-apartment {
+  min-height: 300px;
+  background-color: transparent; /* gunakan langsung background image tanpa panel biru/abu */
+  color: #FFF;
+  padding: 30px;
+  background-size: cover;
+  margin-bottom: 20px;
+  /* Beautify Keamanan cards with corporate style */
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  background-position: center;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.20);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.section-popular-content .section-keamanan .card-apartment::after{
+  display: none; /* hilangkan overlay biru agar background image terlihat penuh */
+}
+.section-popular-content .section-keamanan .card-apartment:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(0,0,0,0.24);
+}
+.section-popular-content .section-keamanan .card-apartment > *{
+  position: relative; z-index: 1;
+}
+.section-popular-content .section-keamanan .apartment-country {
+  font-size: 26px;
+  color: #FFF;
+  font-weight: 800;
+  letter-spacing: .5px;
+}
+.section-popular-content .section-keamanan .apartment-country::after{
+  content: "";
+  display: block;
+  width: 42px;
+  height: 3px;
+  background: #fdce0f;
+  border-radius: 2px;
+  margin-top: 8px;
+}
+.section-popular-content .section-keamanan .apartment-location {
+  font-size: 18px;
+  color: #FFF;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.section-popular-content .section-keamanan .apartment-location::before{
+  content: "";
+  display: inline-block;
+  width: 8px; height: 8px;
+  background: #fdce0f;
+  border-radius: 50%;
+  margin-right: 8px;
+  position: relative; top: -1px;
+}
+
+/* end keamanan */
 
 .section-facility-heading {
   padding-top: 50px;
@@ -142,4 +394,62 @@ header .btn-get-started:hover {
 .section-footer a {
   color: #071C4D;
   text-decoration: none;
-}/*# sourceMappingURL=main.css.map */
+}
+
+/* Corporate footer styling */
+.section-footer {
+  background: linear-gradient(180deg, #081940 0%, #071C4D 100%);
+  color: #EAF2FF;
+  position: relative;
+  margin-bottom: 0 !important; /* remove white strip below footer */
+}
+.section-footer.border-top {
+  border-top: 4px solid #fdce0f !important; /* brand accent */
+}
+.section-footer h5 {
+  color: #FFFFFF;
+  font-weight: 800;
+  letter-spacing: .5px;
+  margin-bottom: 16px;
+}
+.section-footer h5::after{
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #fdce0f;
+  border-radius: 2px;
+  margin-top: 8px;
+}
+.section-footer p {
+  color: #DCE6F5;
+}
+.section-footer ul li a {
+  color: #EAF2FF;
+  opacity: .9;
+  transition: color .2s ease, transform .2s ease;
+}
+.section-footer ul li a:hover {
+  color: #fdce0f;
+  opacity: 1;
+  transform: translateX(2px);
+}
+.section-footer iframe {
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.35);
+}
+.section-footer .container-fluid .row.border-top {
+  border-top: 1px solid rgba(255,255,255,0.15) !important;
+}
+.section-footer .container-fluid .row.border-top .col-auto {
+  color: #DCE6F5;
+  font-weight: 300;
+  letter-spacing: .3px;
+  font-size: 14px;
+}
+
+/* refine spacing */
+.section-footer .container{ padding-top: 60px; padding-bottom: 40px; }
+.section-footer ul li{ margin-bottom: 8px; }
+
+/*# sourceMappingURL=main.css.map */

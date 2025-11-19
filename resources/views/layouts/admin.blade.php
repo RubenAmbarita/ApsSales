@@ -9,9 +9,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
     
-    <title>SB Admin 2 - Dashboard</title>
+    <title>SIMANTAP - Dashboard Monitoring</title>
+    <link rel="icon" type="image/png" href="{{ asset('frontend/images/simantap.png') }}">
 
     @include('includes.style')
+    @stack('addon-style')
 </head>
 
 <body id="page-top">
@@ -22,7 +24,7 @@
         @include('includes.sidebar')
 
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content-wrapper" class="d-flex flex-column" style="background-color: #FFFFFF !important">
 
             <!-- Main Content -->
             <div id="content">
@@ -62,15 +64,24 @@
                 <div class="modal-footer">
                     <form action="{{ url('logout') }}" method="POST">
                         @csrf
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <button class="btn btn-primary" type="submit">Logout</button>
+                        <button class="btn btn-light-soft btn-rounded-10" type="button" data-dismiss="modal">
+                            <i class="fas fa-times mr-1"></i>
+                            Cancel
+                        </button>
+                        <button class="btn btn-soft-danger btn-elevated btn-rounded-10" type="submit">
+                            <i class="fas fa-power-off mr-1"></i>
+                            Logout
+                        </button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 
+
     @include('includes.script')
+    @stack('addon-script')
+    @yield('scripts')
 </body>
 
 </html>
